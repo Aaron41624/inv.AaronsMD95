@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cargando Sistema...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f6f9;
+    }
+    .loader {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <h2>Iniciando servidor local...</h2>
+    <p>Por favor espere unos segundos.</p>
+  </div>
+
+  <script>
+    // Iniciar el servidor Node.js desde el entorno de NW.js
+    require('./server.js');
+
+    // Esperar 1.5 segundos a que el servidor Express y LokiJS levanten y redirigir
+    setTimeout(function() {
+      window.location.href = 'http://localhost:3000';
+    }, 1500);
+  </script>
+</body>
+</html>
